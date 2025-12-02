@@ -17,10 +17,14 @@
 -keep class androidx.** { *; }
 -keep class com.google.android.material.** { *; }
 
+# 添加Google Play Core库相关规则
+-keep class com.google.android.play.core.** { *; }
+-dontwarn com.google.android.play.core.**
+
 # 移除debug日志
 -assumenosideeffects class android.util.Log {
     public static boolean isLoggable(java.lang.String, int);
     public static int v(...);
     public static int d(...);
     public static int i(...);
-} 
+}
